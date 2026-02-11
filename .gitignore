@@ -52,7 +52,7 @@ Infinisql Generator/infinisynapse_output_csv/
 Infinisql Generator/progress.json
 Infinisql Generator/knowledge_map.json
 Infinisql Generator/knowledge_base.json
-Infinisql Generator/snowflake_database_setting.json
+# Infinisql Generator/snowflake_database_setting.json  # 数据源配置，非敏感，可提交
 Infinisql Generator/output/
 Infinisql Generator/data/
 
@@ -60,7 +60,7 @@ Infinisql Generator/data/
 progress.json
 knowledge_map.json
 knowledge_base.json
-snowflake_database_setting.json
+# snowflake_database_setting.json  # 数据源配置，非敏感，可提交
 
 # Output
 output/
