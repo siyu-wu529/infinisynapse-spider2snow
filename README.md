@@ -1,85 +1,100 @@
-# Spider_test 项目
+# Infinisynapse Spider2-Snow
 
-> 基于 Spider2 数据集的 Text2SQL：通过 **Infinisql Generator** 连接 AI Gateway 批量生成 Snowflake SQL，使用 **Spider2** 官方评测，可选 **snowflake_connector** 工具。
-
----
-
-## 项目组成
-
-### 1. Infinisql Generator（主入口）
-
-通过 WebSocket 与 AI Gateway 交互，按 Spider2-Snow 题目批量生成 Snowflake SQL 与 CSV。
-
-- **位置**：`Infinisql Generator/`
-- **入口**：`node infinisql_client.js` 或 `node src/cli.js`
-- **输入**：`Spider2/spider2-snow/spider2-snow.jsonl`
-- **输出**：`Infinisql Generator/infinisynapse_output_sql/`、`infinisynapse_output_csv/`
-- **配置**：同目录 `.env`（AI_GATEWAY_TOKEN）、`snowflake_database_setting.json`、`progress.json`、`knowledge_map.json`
-
-```bash
-cd "Infinisql Generator"
-npm install
-# 创建 .env，设置 AI_GATEWAY_TOKEN=你的JWT
-node infinisql_client.js --setup
-node infinisql_client.js --count 10
-```
-
-详见：**`Infinisql Generator/README.md`**、**`docs/SPIDER2_GATEWAY_CLIENT.md`**。
-
-### 2. Spider2 数据集
-
-- **位置**：`Spider2/`
-- **spider2-snow/**：547 题，纯 Snowflake，供 Infinisql Generator 使用；评测脚本在 `evaluation_suite/`
-- **spider2-lite/**：547 题，多库
-- **spider2-dbt/**：68 题，DBT
-
-### 3. 工具
-
-- **位置**：`tools/infinisynapse-tools/`
-- **内容**：仅 **snowflake_connector**（Snowflake 连接与评测，Go）。见该目录下 `README.md`。
-
-### 4. 文档
-
-| 文档 | 说明 |
-|------|------|
-| [README.md](README.md) | 本文件 |
-| [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md) | 目录结构 |
-| [PROJECT_INDEX.md](PROJECT_INDEX.md) | 根目录索引 |
-| [docs/SPIDER2_GATEWAY_CLIENT.md](docs/SPIDER2_GATEWAY_CLIENT.md) | AI Gateway 客户端使用说明 |
-| [Infinisql Generator/README.md](Infinisql%20Generator/README.md) | Infinisql Generator 使用与依赖 |
-
----
+基于 Spider2-Snow 数据集，通过 AI Gateway 批量生成 Snowflake SQL。
 
 ## 快速开始
 
+### 1. 配置凭证
+
+进入 `Infinisql Generator` 目录，创建两个配置文件：
+
 ```bash
 cd "Infinisql Generator"
-npm install
-# .env 中配置 AI_GATEWAY_TOKEN
-node infinisql_client.js --setup
-node infinisql_client.js --count 10
 ```
 
-评测生成的 SQL：
+**创建 `.env` 文件**（填入你的 AI Gateway Token）：
+
+```
+AI_GATEWAY_TOKEN=你的JWT
+```
+
+**创建 `snowflake_credentials.json`**（复制模板并填入 Snowflake 账号）：
 
 ```bash
-cd Spider2/spider2-snow/evaluation_suite
-python evaluate.py --result_dir "路径/到/Infinisql Generator/infinisynapse_output_sql" --mode sql
+cp snowflake_credentials.template.json snowflake_credentials.json
 ```
 
----
+编辑 `snowflake_credentials.json`，填入你的 Snowflake 账号信息：
 
-## 配置与忽略
+```json
+{
+  "YOUR_HOST_PREFIX": {
+    "host": "YOUR_ACCOUNT.snowflakecomputing.com",
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD"
+  }
+}
+```
 
-- Infinisql Generator：`.env`、`snowflake_credentials.json`、`snowflake_database_setting.json`、`progress.json`、`knowledge_map.json`。  
-  - 勿提交 `.env` 与真实凭证；仓库中提供 `snowflake_credentials.template.json`，请复制为 `snowflake_credentials.json` 并填入自己的账号密码。
-- Spider2：`Spider2/spider2-snow/evaluation_suite/snowflake_credential.json` 同样只在本地保留真实文件；  
-  - 仓库中提供 `snowflake_credential.template.json`，请复制为 `snowflake_credential.json` 并填入自己的账号信息。
-- 运行时日志（如 `*.log`）已由 `.gitignore` 忽略。见 `.gitignore`。
+### 2. 运行
 
----
+```bash
+# 查看帮助
+node src/cli.js --help
+
+# 查看统计信息
+node src/cli.js --stats
+
+# 跑单题测试
+node src/cli.js --one --id sf_bq001
+
+# 随机跑 3 题
+node src/cli.js --random-count 3
+
+# 批量跑 10 题
+node src/cli.js --batch 10
+```
+
+## 项目结构
+
+```
+├── Infinisql Generator/     # SQL 生成工具（主入口）
+│   ├── src/                 # 源码
+│   ├── .env                 # Token 配置（需自行创建）
+│   ├── snowflake_credentials.json  # Snowflake 凭证（需自行创建）
+│   └── snowflake_database_setting.json  # 数据源配置（已包含）
+│
+└── Spider2/
+    └── spider2-snow/        # Spider2-Snow 数据集
+        ├── spider2-snow.jsonl       # 547 道题目
+        └── resource/documents/      # 知识库文档
+```
+
+## 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `node src/cli.js --help` | 查看所有命令 |
+| `node src/cli.js --stats` | 显示进度统计 |
+| `node src/cli.js --one --id <id>` | 跑指定题目 |
+| `node src/cli.js --one --random` | 随机跑 1 题 |
+| `node src/cli.js --random-count <n>` | 随机跑 n 题 |
+| `node src/cli.js --batch <n>` | 批量跑 n 题 |
+| `node src/cli.js --setup` | 创建所有数据源 |
+| `node src/cli.js --setup-kb` | 创建所有知识库 |
+| `node src/cli.js --resume` | 从上次中断处继续 |
+
+## 输出
+
+- **SQL 文件**：`Infinisql Generator/infinisynapse_output_sql/<instance_id>.sql`
+- **CSV 结果**：`Infinisql Generator/infinisynapse_output_csv/<instance_id>.csv`
+
+## 更多文档
+
+- [Infinisql Generator 详细说明](Infinisql%20Generator/README.md)
+- [数据源配置说明](Infinisql%20Generator/docs/DATASOURCE_DEPENDENCIES.md)
+- [架构设计](Infinisql%20Generator/docs/ARCHITECTURE.md)
 
 ## 参考
 
-- Spider2：<https://spider2-sql.github.io/>
-- 数据集与评测：`Spider2/README.md`
+- [Spider2 官方网站](https://spider2-sql.github.io/)
