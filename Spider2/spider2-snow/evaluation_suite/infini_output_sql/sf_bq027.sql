@@ -1,0 +1,1 @@
+SELECT `publication_number`, size(regexp_extract_all(`citation`, '\\"category\\":\\"SEA\\"')) AS `sea_backward_citations_count` FROM PATENTS_PUBLICATIONS WHERE `grant_date` >= 20100101 AND `grant_date` <= 20181231 AND `grant_date` != 0

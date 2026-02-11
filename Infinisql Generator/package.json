@@ -1,0 +1,28 @@
+{
+  "name": "infinisql-generator",
+  "version": "1.0.0",
+  "description": "通过 AI Gateway 批量生成 Infinisql",
+  "main": "infinisql_client.js",
+  "scripts": {
+    "start": "node infinisql_client.js",
+    "start:resume": "node infinisql_client.js --resume",
+    "test:10": "node infinisql_client.js --count 10",
+    "run:sampled20": "node infinisql_client.js --ids-file ../Spider2/spider2-snow/evaluation_suite/sampled_20_instance_ids.txt",
+    "run:sampled20:src": "node src/cli.js --ids-file ../Spider2/spider2-snow/evaluation_suite/sampled_20_instance_ids.txt",
+    "file-server": "node src/server/file-save.js"
+  },
+  "keywords": [
+    "infinisql",
+    "ai-gateway"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "snowflake-sdk": "^2.3.3",
+    "socket.io-client": "^4.7.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

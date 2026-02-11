@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# IDE / Editor
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+snowflake.log
+
+# Sensitive credentials
+snowflake_credentials.json
+.env
+.env.local
+*.pem
+*.key
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Infinisql Generator outputs / state
+Infinisql Generator/infinisynapse_output_sql/
+Infinisql Generator/infinisynapse_output_csv/
+Infinisql Generator/progress.json
+Infinisql Generator/knowledge_map.json
+Infinisql Generator/knowledge_base.json
+Infinisql Generator/snowflake_database_setting.json
+Infinisql Generator/output/
+Infinisql Generator/data/
+
+# Global copies of the same configs (if moved to project root)
+progress.json
+knowledge_map.json
+knowledge_base.json
+snowflake_database_setting.json
+
+# Output
+output/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# Zip archives (can be large)
+*.zip
+*.7z
+*.tar.gz
+
+# Spider2 datasets (large, official repo)
+Spider2/assets/
+Spider2/methods/
+Spider2/spider2-dbt/
+Spider2/spider2-lite/

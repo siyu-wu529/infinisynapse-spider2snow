@@ -1,0 +1,2 @@
+patent_id,patent_number,application_date,backward_citations_within_1y_before_app,forward_citations_within_1y_after_app,forward_citations_within_3y_after_app
+10537325,10537325,2016-12-21,101,6,13

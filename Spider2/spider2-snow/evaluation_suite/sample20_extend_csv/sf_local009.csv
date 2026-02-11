@@ -1,0 +1,13 @@
+departure_airport,DEPARTURE_AIRPORT_NAME,DEPARTURE_CITY,arrival_airport,ARRIVAL_AIRPORT_NAME,ARRIVAL_CITY,DISTANCE_KM
+GRV,"{\"en\": \"Khankala Air Base\", \"ru\": \"Грозный\"}","{\"en\": \"Grozny\", \"ru\": \"Грозный\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",3484.15
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",GRV,"{\"en\": \"Khankala Air Base\", \"ru\": \"Грозный\"}","{\"en\": \"Grozny\", \"ru\": \"Грозный\"}",3484.15
+DME,"{\"en\": \"Domodedovo International Airport\", \"ru\": \"Домодедово\"}","{\"en\": \"Moscow\", \"ru\": \"Москва\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",3366.28
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",DME,"{\"en\": \"Domodedovo International Airport\", \"ru\": \"Домодедово\"}","{\"en\": \"Moscow\", \"ru\": \"Москва\"}",3366.28
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",ARH,"{\"en\": \"Talagi Airport\", \"ru\": \"Талаги\"}","{\"en\": \"Arkhangelsk\", \"ru\": \"Архангельск\"}",3027.65
+ARH,"{\"en\": \"Talagi Airport\", \"ru\": \"Талаги\"}","{\"en\": \"Arkhangelsk\", \"ru\": \"Архангельск\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",3027.65
+OVB,"{\"en\": \"Tolmachevo Airport\", \"ru\": \"Толмачёво\"}","{\"en\": \"Novosibirsk\", \"ru\": \"Новосибирск\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",582.69
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",OVB,"{\"en\": \"Tolmachevo Airport\", \"ru\": \"Толмачёво\"}","{\"en\": \"Novosibirsk\", \"ru\": \"Новосибирск\"}",582.69
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",TOF,"{\"en\": \"Bogashevo Airport\", \"ru\": \"Богашёво\"}","{\"en\": \"Tomsk\", \"ru\": \"Томск\"}",490.53
+TOF,"{\"en\": \"Bogashevo Airport\", \"ru\": \"Богашёво\"}","{\"en\": \"Tomsk\", \"ru\": \"Томск\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",490.53
+KYZ,"{\"en\": \"Kyzyl Airport\", \"ru\": \"Кызыл\"}","{\"en\": \"Kyzyl\", \"ru\": \"Кызыл\"}",ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",307.01
+ABA,"{\"en\": \"Abakan Airport\", \"ru\": \"Абакан\"}","{\"en\": \"Abakan\", \"ru\": \"Абакан\"}",KYZ,"{\"en\": \"Kyzyl Airport\", \"ru\": \"Кызыл\"}","{\"en\": \"Kyzyl\", \"ru\": \"Кызыл\"}",307.01

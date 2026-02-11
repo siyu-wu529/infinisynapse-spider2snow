@@ -1,0 +1,9 @@
+month,session_type,session_count,avg_pageviews_per_visitor
+201704,non_purchase,2158,3.097776
+201704,purchase,12,22.583333
+201705,non_purchase,2509,3.429255
+201705,purchase,78,19.166667
+201706,non_purchase,2791,3.329631
+201706,purchase,35,22.714286
+201707,non_purchase,2045,3.166259
+201707,purchase,3,29.000000

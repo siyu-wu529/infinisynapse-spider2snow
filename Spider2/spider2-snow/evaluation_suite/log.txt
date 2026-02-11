@@ -1,0 +1,5 @@
+Evaluating Exec Results:   0%|                                                                  | 0/16 [00:00<?, ?it/s]Evaluating Exec Results:  31%|##################1                                       | 5/16 [00:00<00:00, 49.95it/s]Evaluating Exec Results:  94%|#####################################################4   | 15/16 [00:01<00:00, 10.84it/s]Evaluating Exec Results: 100%|#########################################################| 16/16 [00:01<00:00,  9.57it/s]
+{'sf014': 1, 'sf_local199': 1, 'sf_local019': 1, 'sf_local039': 1, 'sf_bq099': 0, 'sf_bq012': 1, 'sf_local309': 0, 'sf044': 0, 'sf012': 0, 'sf002': 1, 'sf_bq455': 0, 'sf040': 0, 'sf_local003': 0, 'sf_bq271': 0, 'sf018': 0, 'sf011': 0}
+Final score: 0.375, Correct examples: 6, Total examples: 16
+Real score: 0.010968921389396709, Correct examples: 6, Total examples: 547
+Correct IDs saved to: sample20_csv.csv

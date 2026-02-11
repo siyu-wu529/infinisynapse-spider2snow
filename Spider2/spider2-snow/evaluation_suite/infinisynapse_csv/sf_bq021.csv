@@ -1,0 +1,2 @@
+start_station_name,start_lat,start_lon,end_lat,end_lon,trip_count,avg_bike_duration_seconds,avg_taxi_duration_seconds,speed_comparison
+Grand Army Plaza & Central Park S,40.764,-73.974,40.764,-73.974,2915,2873.501201,403731343.283582,Bike Faster
